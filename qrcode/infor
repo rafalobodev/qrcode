@@ -1,0 +1,15 @@
++++++++++criando um vue.js++++++++++++++++++++++
+*sudo npm i -g @vue/cli    :instala vue de forma global para iniciar a aplicação
+*vue create qrcode    :cria estrutura vue basica do projeto e enter para opção padrão
+*scaffold      :cria arquivo novo e digita scaffold enter gera template basico arquivo.vue
+
+*npm run qrcode    :executar o qrcode projeto de qualquer pasta
+
+
+
+
+
+
+
+
+cd .1projetosCode\qrcode

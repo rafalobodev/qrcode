@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="js/vue.min.js"></script>
+    <script src="js/qrious.min.js"></script><!--biblioteca q vai gerar o qrcode-->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Gerador de QRCode</title>
+</head>
+
+<body>
+    <div id="app">  
+        <h1>{{ title }}</h1>
+        <div>
+            <input type="text" size="25"
+                placeholder="Digite para gerar..." 
+                v-model="text"><!--v-model tipo input="onData" q vai alterar text valor se quer mudar o site de qrcode mais resumido-->
+        </div>
+
+        <div v-if="text" class="output"><!--exibido quando texto estiver presente-->
+            <img :src="newQRCode" alt="QRCode"><!--associa src newQRCode q foi computed-->
+        </div>
+    </div>
+    <script>
+        new Vue({//instancia vue
+            el: '#app',//elemento id app
+            data: {//sobre projeto,text:associado input
+                title: 'Gerador QRCode',
+                text: 'https://losfodo.github.io/', //texto q gera qrcode
+                qrcode: new QRious({ size: 300 }) //qrcode vai instanciar import acima QRious.. qrcode tamano 300
+            },
+            computed: {//atributo computado ou calculado
+                newQRCode() {//cada texto criado gera um novo qrcode
+                    this.qrcode.value = this.text //qrcode recebe text https://www.cod3r.com.br
+                    return this.qrcode.toDataURL() //retorna gera atributo data url
+                }
+            }/*,      //modo mais resumido usando v-model sem necessidade na div   :value="text"   @input="onData"
+            //methods: {//area de metodos
+               // onData(event) {//associar input q gera valores no evento ondata
+               //     this.text = event.target.value //evento q pega valor do input e altera valor do texto apos alterado gera novo qrcode
+              //  }
+          //  }*/
+        })
+    </script>
+</body>
+
+</html>
