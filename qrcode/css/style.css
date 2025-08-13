@@ -11,7 +11,6 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
-    
     color: #FFF;
     background: linear-gradient(to right, rgb(19, 106, 138), rgb(38, 120, 113));
 }
@@ -25,4 +24,11 @@ input {
     border: 1px solid #222;
     padding: 30px 15px;
     background-color: #0006;
+}
+
+footer {
+    margin-top: 100px; /* espaço entre o conteúdo e o footer */
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
 }

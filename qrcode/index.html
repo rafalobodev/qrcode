@@ -21,13 +21,16 @@
         <div v-if="text" class="output"><!--exibido quando texto estiver presente-->
             <img :src="newQRCode" alt="QRCode"><!--associa src newQRCode q foi computed-->
         </div>
+        <footer>
+             © RafaelLinoLobo - 2025
+        </footer>
     </div>
     <script>
         new Vue({//instancia vue
             el: '#app',//elemento id app
             data: {//sobre projeto,text:associado input
                 title: 'Gerador QRCode',
-                text: 'https://losfodo.github.io/', //texto q gera qrcode
+                text: 'https://colecoescdc.lojavirtualnuvem.com.br/', //texto q gera qrcode
                 qrcode: new QRious({ size: 300 }) //qrcode vai instanciar import acima QRious.. qrcode tamano 300
             },
             computed: {//atributo computado ou calculado
